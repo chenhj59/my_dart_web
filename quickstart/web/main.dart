@@ -5,7 +5,7 @@ Iterable<String> thingsTodo() sync* {
   const pets = ['cats', 'dogs'];
 
   for (final action in actions) {
-    for (final pet in petsquicks) {
+    for (final pet in pets) {
       if (pet != 'cats' || action == 'Feed') {
         yield '$action the $pet';
       }
