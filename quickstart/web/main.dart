@@ -13,6 +13,8 @@ Iterable<String> thingsTodo() sync* {
   }
 }
 
+LIElement newLI(String itemText) => LIElement()..text = itemText;
+
 void addTodoItem(String item) {
   final listElement = LIElement()..text = item;
 
@@ -20,8 +22,6 @@ void addTodoItem(String item) {
 }
 
 final UListElement todoList = querySelectorAll('#todolist') as UListElement;
-
 void main() {
-  thingsTodo().forEach(addTodoItem);
+  querySelector('#output')?.children.addAll(thingsTodo().map(newLI));
 }
-
