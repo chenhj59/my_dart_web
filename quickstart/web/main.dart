@@ -21,7 +21,8 @@ void addTodoItem(String item) {
   todoList.children.add(listElement);
 }
 
-final UListElement todoList = querySelectorAll('#todolist') as UListElement;
+final UListElement todoList = querySelector('#todolist') as UListElement;
 void main() {
-  querySelector('#output')?.children.addAll(thingsTodo().map(newLI));
+  thingsTodo().forEach(addTodoItem);
+  //querySelector('#output')?.children.addAll(thingsTodo().map(newLI));
 }
